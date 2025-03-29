@@ -1,8 +1,10 @@
-import { CodeBlock } from "@/components/code-block";
+import { CodeBlock } from '@/components/code-block';
+import { Navbar } from '@/components/navbar';
 
 export default function Home() {
   return (
-    <div className="min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-[200vh] gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
+      <Navbar />
       <p>It all starts with the command:</p>
 
       <CodeBlock title="bash" lang="bash" code="npx create-next-app@latest" />
