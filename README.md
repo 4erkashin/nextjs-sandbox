@@ -5,6 +5,7 @@
 
 - install prettier https://prettier.io/docs/install
 - eslint config prettier https://github.com/prettier/eslint-config-prettier?tab=readme-ov-file#installation
+- prettier plugin tailwind https://github.com/tailwindlabs/prettier-plugin-tailwindcss
 
 - if `pnpm outdated` lists nextjs
 - `pnpx @next/codemod@latest upgrade latest`
