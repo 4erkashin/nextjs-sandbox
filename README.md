@@ -1,0 +1,3 @@
+- `git init`
+- `pnpm add -D eslint-plugin-react-hooks`
+- `pnpm add -D @next/eslint-plugin-next`
