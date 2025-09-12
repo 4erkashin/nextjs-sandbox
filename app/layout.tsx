@@ -3,6 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Geist_Mono, Poppins } from "next/font/google";
 
+import { MswProvider } from "./providers";
+
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
@@ -27,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${geistMono.variable} antialiased`}>
-        {children}
+        <MswProvider>{children}</MswProvider>
       </body>
     </html>
   );
