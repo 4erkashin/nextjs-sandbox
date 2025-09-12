@@ -1,3 +1,5 @@
+"use client";
+
 import { FormEvent, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -40,7 +42,9 @@ export function LoginForm({
 
       // Simulate cookie-based auth for POC (non-HttpOnly)
       document.cookie = `session=${data.session}; Path=/; SameSite=Lax`;
-      window.location.href = "/";
+      const params = new URLSearchParams(window.location.search);
+      const to = params.get("redirect") || "/";
+      window.location.href = to;
     } catch (err) {
       console.error(err);
       setError("Network error");
