@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Geist_Mono, Poppins } from "next/font/google";
 
-import { MswProvider } from "./providers";
+import { MswProvider, ThemeProvider } from "./providers";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -27,9 +27,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.variable} ${geistMono.variable} antialiased`}>
-        <MswProvider>{children}</MswProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <MswProvider>{children}</MswProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

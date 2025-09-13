@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 
 function isPublic(pathname: string) {
-  return pathname === "/login";
+  return pathname === "/login" || pathname === "/sign-up";
 }
 
 function isAsset(pathname: string) {
@@ -24,7 +24,7 @@ export function middleware(req: NextRequest) {
   const session = req.cookies.get("session")?.value;
   const isAuthed = !!session && session.startsWith("mock-session-");
 
-  if (isAuthed && pathname === "/login") {
+  if (isAuthed && (pathname === "/login" || pathname === "/sign-up")) {
     return NextResponse.redirect(new URL("/", req.url));
   }
 

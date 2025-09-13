@@ -1,10 +1,10 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-import { SignIn9 } from "@/components/pro-blocks/application/sign-in/sign-in-9";
+import { SignUp7 } from "@/components/pro-blocks/application/sign-up/sign-up-7";
 
-export default async function LoginPage() {
+export default async function SignUpPage() {
   const cookie = (await cookies()).get("session")?.value;
   if (cookie?.startsWith("mock-session-")) redirect("/");
-  return <SignIn9 />;
+  return <SignUp7 />;
 }

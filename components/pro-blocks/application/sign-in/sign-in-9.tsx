@@ -5,7 +5,9 @@ import { FormEvent, useState } from "react";
 
 import { Logo } from "@/components/pro-blocks/logo";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export function SignIn9() {
   const [email, setEmail] = useState("");
@@ -50,13 +52,7 @@ export function SignIn9() {
           {/* Logo and header section */}
           <div className="mb-6 flex flex-col items-center space-y-6">
             <Logo className="h-8 w-8" />
-            <div className="flex flex-col gap-y-3 text-center">
-              <h1 className="text-2xl font-bold md:text-3xl">Sign in</h1>
-              <p className="text-muted-foreground text-sm">
-                Log in to unlock tailored content and stay connected with your
-                community.
-              </p>
-            </div>
+            <h1 className="text-4xl font-semibold md:text-5xl">Welcome</h1>
           </div>
           {/* Input fields section */}
           <form onSubmit={onSubmit}>
@@ -81,29 +77,41 @@ export function SignIn9() {
               </div>
               {error ? <p className="text-sm text-red-500">{error}</p> : null}
             </div>
-            {/* Sign-in button and sign-up link section */}
-            <div className="flex flex-col space-y-6">
+            {/* Forgot password above submit */}
+            <div className="flex justify-center">
+              <Link
+                className="text-muted-foreground hover:text-foreground text-sm underline"
+                href="#"
+              >
+                Forgot password?
+              </Link>
+            </div>
+            {/* Submit + Remember me */}
+            <div className="mt-6 flex flex-col space-y-6">
               <Button type="submit" className="w-full" disabled={pending}>
-                {pending ? "Signing in..." : "Sign in"}
+                {pending ? "Signing in..." : "Log in"}
               </Button>
-              {/* Forgot password link */}
-              <div className="flex justify-center">
-                <Link
-                  className="text-muted-foreground hover:text-foreground text-sm underline"
-                  href="#"
+              <div className="flex items-center justify-center gap-2">
+                <Checkbox id="remember" />
+                <Label
+                  htmlFor="remember"
+                  className="text-muted-foreground text-sm"
                 >
-                  Forgot password?
-                </Link>
+                  Remember me
+                </Label>
               </div>
-              <p className="text-muted-foreground text-center text-sm">
-                Don&apos;t have an account?{" "}
-                <Link className="text-foreground underline" href="#">
-                  Sign up
-                </Link>
-              </p>
             </div>
           </form>
         </div>
+      </div>
+      {/* Bottom CTA */}
+      <div className="fixed inset-x-0 bottom-8">
+        <p className="text-muted-foreground text-center text-sm">
+          No account?{" "}
+          <Link className="text-foreground underline" href="/sign-up">
+            Create one
+          </Link>
+        </p>
       </div>
     </div>
   );

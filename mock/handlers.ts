@@ -1,6 +1,12 @@
 import { http, HttpResponse } from "msw";
 
 type LoginBody = { email: string; password: string };
+type SignUpBody = {
+  firstName?: string;
+  lastName?: string;
+  email: string;
+  password: string;
+};
 
 const MOCK_USER = {
   id: "u_1",
@@ -19,6 +25,31 @@ function parseCookie(cookieHeader: string | null) {
 }
 
 export const handlers = [
+  http.post("/api/sign-up", async ({ request }) => {
+    const body = (await request.json()) as SignUpBody;
+    const valid =
+      typeof body?.email === "string" &&
+      typeof body?.password === "string" &&
+      body.password.length > 0;
+
+    if (!valid) {
+      return HttpResponse.json({ error: "Invalid input" }, { status: 400 });
+    }
+
+    // For demo parity with login: allow only example.com emails
+    const ok = body.email.endsWith("@example.com");
+    if (!ok) {
+      return HttpResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    const session = "mock-session-" + Math.random().toString(36).slice(2);
+    const name =
+      `${body.firstName ?? "Demo"} ${body.lastName ?? "User"}`.trim();
+    return HttpResponse.json(
+      { user: { ...MOCK_USER, name, email: body.email }, session },
+      { status: 200 },
+    );
+  }),
   http.post("/api/login", async ({ request }) => {
     const body = (await request.json()) as LoginBody;
     const valid =
