@@ -8,13 +8,21 @@ As of November 10, 2025, there is no need to manually tweak the default configur
 
 Docs: https://nextjs.org/docs/app/api-reference/config/eslint
 
-#### Old, will be rewritten
+Perfectionist: https://github.com/azat-io/eslint-plugin-perfectionist?tab=readme-ov-file#flat-config-eslintconfigjs-1
 
-- simple import sort https://github.com/lydell/eslint-plugin-simple-import-sort?tab=readme-ov-file#installation
+#### Prettier
 
-- prettier https://prettier.io/docs/install
-- eslint config prettier https://github.com/prettier/eslint-config-prettier?tab=readme-ov-file#installation
-- prettier plugin tailwind https://github.com/tailwindlabs/prettier-plugin-tailwindcss
+Docs: https://prettier.io/docs/install
 
-- if `pnpm outdated` lists nextjs
-- `pnpx @next/codemod@latest upgrade latest`
+Eslint config: https://github.com/prettier/eslint-config-prettier?tab=readme-ov-file#installation
+
+Tailwind plugin: https://github.com/tailwindlabs/prettier-plugin-tailwindcss
+
+#### Updates
+
+if `pnpm outdated` lists nextjs\
+`pnpx @next/codemod@latest upgrade latest`
+
+### TODO
+
+- dependabot or renovate
