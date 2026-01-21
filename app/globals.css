@@ -119,7 +119,40 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  h1 {
+    @apply mt-8 mb-4 text-3xl leading-tight font-semibold tracking-tight first:mt-0;
+  }
+
+  h2 {
+    @apply mt-6 mb-3 text-2xl leading-tight font-semibold tracking-tight first:mt-0;
+  }
+
+  h3 {
+    @apply mt-4 mb-2 text-xl leading-snug font-semibold tracking-tight first:mt-0;
+  }
+
+  h4 {
+    @apply mt-3 mb-2 text-lg leading-snug font-semibold first:mt-0;
+  }
+
+  h5 {
+    @apply mt-2 mb-1 text-base leading-normal font-semibold first:mt-0;
+  }
+
+  h6 {
+    @apply mt-2 mb-1 text-sm leading-normal font-semibold first:mt-0;
+  }
+}
+
+@layer components {
+  main,
+  header,
+  footer {
+    @apply p-4;
   }
 }

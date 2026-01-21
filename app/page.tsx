@@ -11,28 +11,6 @@ export default function Home() {
         "bg-zinc-50 font-sans dark:bg-black",
       )}
     >
-      <header
-        className={cn(
-          "w-full max-w-3xl",
-          "flex flex-col",
-          "bg-white dark:bg-black",
-        )}
-      >
-        <pre>
-          {JSON.stringify(
-            [
-              "TODO",
-              {
-                1: "basic layout",
-                description: "paddings and headings scheme",
-              },
-            ],
-            null,
-            2,
-          )}
-        </pre>
-      </header>
-
       <main
         className={cn(
           "w-full max-w-3xl",
