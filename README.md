@@ -26,3 +26,9 @@ if `pnpm outdated` lists nextjs\
 ### TODO
 
 - dependabot or renovate
+
+### Misc
+
+- ai sdk
+  - `touch .env.local`
+  - AI_GATEWAY_API_KEY=xxxxxxxxx
