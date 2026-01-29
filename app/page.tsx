@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-import { RequestsFlow } from "./requests-flow";
+import { Chat } from "./_componets/chat";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
           "bg-white dark:bg-black",
         )}
       >
-        <RequestsFlow />
+        <Chat />
       </main>
     </div>
   );
