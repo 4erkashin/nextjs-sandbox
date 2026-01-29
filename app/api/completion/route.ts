@@ -2,6 +2,8 @@ import { streamText } from "ai";
 
 import { COVER_LETTER_SYSTEM_PROMPT } from "@/lib/cover-letter-prompts";
 
+export const maxDuration = 30;
+
 type CoverLetterBody = {
   additionalDetails?: string;
   company?: string;

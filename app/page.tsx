@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-import { Chat } from "./_componets/chat";
+import { CoverLetterForm } from "./componets/cover-letter-form";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
           "bg-white dark:bg-black",
         )}
       >
-        <Chat />
+        <CoverLetterForm />
       </main>
     </div>
   );
